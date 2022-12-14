@@ -41,7 +41,7 @@ class Solution {
         {// all buildings greater height will face sun
             if(h[i]>maxHeight) {
                 count++;
-                maxHeight = h[i];// updating max heigh
+                maxHeight = h[i];// updating max height
             }
         }
         return count;
