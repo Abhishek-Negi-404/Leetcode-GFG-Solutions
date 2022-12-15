@@ -20,8 +20,7 @@ public class Solution {
         // if no. of nodes = even --> fast = null
         // if no, of nodes = odd --> fast.next = null
         while(fast!=null && fast.next!=null)
-        {
-            // moving slow at --> X & fast at --> 2X
+        {   // moving slow at --> X & fast at --> 2X
             slow = slow.next;
             fast = fast.next.next;
             // is the pointers meet ==> cyclic
