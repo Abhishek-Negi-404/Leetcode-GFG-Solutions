@@ -58,7 +58,8 @@ class Solution {
 //         }
         
 // Solution 2 ======================================================================================
-        while(p1 !=null  ||  p2 != null  ||  carry > 0)
+        // until both lists are traversed and no carry is left
+        while(p1 !=null  ||  p2 != null)
         {
             int value = carry;
             if(p1 != null){
@@ -73,6 +74,10 @@ class Solution {
             ListNode nn = new ListNode(value%10);
             sum.next = nn;
             sum = sum.next;
+        }
+        if(carry > 0){
+            ListNode nn = new ListNode(carry);
+            sum.next = nn;
         }
         
         return dummy.next;// returning head using dummy
