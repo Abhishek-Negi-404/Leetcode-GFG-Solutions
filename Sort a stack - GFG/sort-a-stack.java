@@ -25,6 +25,7 @@ class SortedStack{
 
 /*Complete the function below*/
 class GfG{
+    // function to insert element in sorted manner
     public void sortedInsert(Stack<Integer> s,int num){
         // base cases => either empty or peek is smaller
         if(s.isEmpty() || s.peek()<num){
@@ -48,7 +49,7 @@ class GfG{
 		s.pop();
 		// recursive call
 		Stack<Integer> ans = sort(s);
-		// insert in sorted way
+		// insert in sorted manner
 		sortedInsert(ans,top);
 		return ans;
 	}
