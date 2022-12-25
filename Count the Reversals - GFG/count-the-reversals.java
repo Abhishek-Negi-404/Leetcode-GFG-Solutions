@@ -39,16 +39,19 @@ class Sol
         for(int i=0;i<s.length();i++)
         {
             char c = s.charAt(i);
+            // when character is '{' --> push
             if(c=='{'){
-                openCount++;// increasing count for all open braces
+                openCount++;    // increasing count for all open braces
                 st.push(c);
-            }else{
+            }
+            // when character is '}' --> pop '{' at peek || push 
+            else{   
                 if(st.size()>0 && st.peek()=='{'){
-                    openCount--;// decreasing count for --> open valid braces
-                    st.pop();// removeing valid open braces
+                    openCount--;    // decreasing count for --> open valid braces
+                    st.pop();   // removeing valid open braces
                 }else{
-                    st.push(c);// push invalid clodes braces
-                    closeCount++;// increasing count for --> closed invalid braces
+                    st.push(c);    // push invalid clodes braces
+                    closeCount++;   // increasing count for --> closed invalid braces
                 }
             }
         }
