@@ -7,9 +7,8 @@ class Solution {
 	    // traverse from R-->L for NSE
 	    for(int i=n-1;i>=0;i--)
 	    {  // peek is greater --> pop() until peek() is smaller   
-	       while(s.size()>0 && arr[s.peek()]>=arr[i]){
+	       while(s.size()>0 && arr[s.peek()]>=arr[i])
 	           s.pop();
-	       }
 	       
 	       if(s.isEmpty()) ans[i] = n;   // empty stack --> no smaller element
 	       
@@ -24,12 +23,11 @@ class Solution {
     public int[] prevSmallerIdx(int arr[],int n){
         Stack<Integer> s = new Stack<>();
 	    int ans[] = new int[n];
-	    // traverse from L-->R for NSE
+	    // traverse from L-->R for PSE
 	    for(int i=0;i<n;i++)
 	    {  // if peek() is greater --> pop() until peek() is smaller   
-	       while(s.size()>0 && arr[s.peek()]>=arr[i]){
+	       while(s.size()>0 && arr[s.peek()]>=arr[i])
 	           s.pop();
-	       }
 	       
 	       if(s.isEmpty()) ans[i] = -1;   // empty stack --> no smaller element
 	       
