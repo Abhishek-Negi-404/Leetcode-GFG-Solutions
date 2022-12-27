@@ -48,10 +48,10 @@ class Solution {
         int maxArea = 0;
         for(int i=0;i<n;i++)
         {
-            int l = heights[i];
-            int b = next[i] - prev[i] - 1;  // derived formula
-            int area = l*b;
-            //int area = heights[i]* (next[i] - prev[i] - 1);
+            // int l = heights[i];
+            // int b = next[i] - prev[i] - 1;  // derived formula
+            // int area = l*b;
+            int area = heights[i]* (next[i] - prev[i] - 1);
             maxArea = Math.max(maxArea,area);
         }
         return maxArea;
