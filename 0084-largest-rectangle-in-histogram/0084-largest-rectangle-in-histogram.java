@@ -1,6 +1,6 @@
 class Solution {
 
-// indices of  next smaller element(NSE)========================================================
+// returns indices of  next smaller element(NSE)
     public int[] nextSmallerIdx(int arr[],int n){
       Stack<Integer> s = new Stack<>();
 	    int ans[] = new int[n];
@@ -19,7 +19,7 @@ class Solution {
 	    return ans;
     }
 
-// indices of previous smaller element(PSE)=====================================================
+// returns indices of previous smaller element(PSE)
     public int[] prevSmallerIdx(int arr[],int n){
         Stack<Integer> s = new Stack<>();
 	    int ans[] = new int[n];
@@ -45,11 +45,8 @@ class Solution {
         
         int maxArea = 0;
         for(int i=0;i<n;i++)
-        {
-            // int l = heights[i];
-            // int b = next[i] - prev[i] - 1;  // derived formula
-            // int area = l*b;
-            int area = heights[i]* (next[i] - prev[i] - 1);
+        {   // using derived formula for width
+            int area = heights[i] * (next[i] - prev[i] - 1);    // area = length * breadth
             maxArea = Math.max(maxArea,area);
         }
         return maxArea;
